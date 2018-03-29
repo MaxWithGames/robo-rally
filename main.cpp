@@ -1,20 +1,10 @@
+#include "App.h"
 #include <SFML/Window.hpp>
+#include <string.h>
 
 using namespace sf;
 
-int main() {
-    Window window(VideoMode(800, 600), "");
-
-    while (window.isOpen()) {
-        Event evt;
-        while (window.pollEvent(evt)) {
-            if (evt.type == Event::Closed) {
-                window.close();
-            }
-        }
-
-        window.display();
-    }
-
-    return 0;
+int main(int argc, char **argv) {
+    App app(argc, argv);
+    return app.run();
 }
